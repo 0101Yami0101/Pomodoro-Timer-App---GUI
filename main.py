@@ -13,8 +13,9 @@ SHORT_BREAK_MIN = 5
 LONG_BREAK_MIN = 20
 reps = 0
 timer = None
-#TIMER RESET MECH
 
+
+#TIMER RESET MECH
 def reset_timer():
     window.after_cancel(timer) #resets timer to None/Initial
     #reset other
@@ -24,8 +25,8 @@ def reset_timer():
     global reps
     reps = 0
 
+    
 #TIMER MECH
-
 def start_timer():
 
     global reps
@@ -44,6 +45,7 @@ def start_timer():
     else:
         count_down(work_sec)
         title_label.config(text="WORK", fg=GREEN)
+        
 
 #COUNTDOWN MECH
 def count_down(count):
@@ -89,7 +91,6 @@ timer_text = canvas.create_text(100, 136, text = "00:00", fill= "white", font=(F
 canvas.grid(column=1, row=1)
 
 
-
 #buttons
 start_btn = Button(text="Start", bg= YELLOW, command= start_timer)
 start_btn.grid(column=0 , row=2)
@@ -97,9 +98,12 @@ start_btn.grid(column=0 , row=2)
 reset_btn = Button(text="Reset", bg= YELLOW, command= reset_timer)
 reset_btn.grid(column=2 , row=2)
 
+
 #checkmarks
 check_mark = Label(bg=YELLOW, fg= GREEN, font=(FONT_NAME,20))
 check_mark.grid(column=1, row=3)
+
+
 
 
 
